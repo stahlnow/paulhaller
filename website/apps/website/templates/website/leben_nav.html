@@ -1,0 +1,18 @@
+{% load lineage %}
+<div class="row full">
+    <div class="large-8 columns">
+        <nav>
+            <ul class="inline-list">
+                <li class="{% ancestor 'zeittafel' %}"><a href="{% url 'zeittafel' %}"
+                                                           title="Zeittafel">Zeittafel</a>
+                </li>
+                <li class="{% ancestor 'biografie' %}"><a href="{% url 'biografie' %}"
+                                                         title="Biografie">Über Paul Haller</a>
+                </li>
+                <li class="{% ancestor 'galerie' %}"><a href="{% url 'galerie' %}"
+                                                             title="Galerie">Galerie</a></li>
+
+            </ul>
+        </nav>
+    </div>
+</div>

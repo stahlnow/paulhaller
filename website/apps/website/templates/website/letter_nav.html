@@ -1,0 +1,15 @@
+{% load i18n %}
+{% load static %}
+{% load lineage %}
+<nav class="letter-nav">
+    <ul class="inline-list">
+        {% for letter in letters %}
+        <li class="{% ancestor 'letter_detail' letter.slug %}">
+            <a href="{% url 'letter_detail' slug=letter.slug %}"
+               title="{% trans 'permalink' %}">
+                {{ letter.title }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>

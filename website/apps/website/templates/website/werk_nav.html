@@ -1,0 +1,21 @@
+{% load lineage %}
+<div class="row full">
+    <div class="large-8 columns">
+        <nav>
+            <ul class="inline-list">
+                <li class="{% ancestor 'neuausgabe' %}"><a href="{% url 'neuausgabe' %}"
+                                                           title="Neuausgabe">Neuausgabe</a>
+                </li>
+                <li class="{% ancestor 'gedichte' %}"><a href="{% url 'gedichte' %}"
+                                                         title="Gedichte">Gedichte</a>
+                </li>
+                <li class="{% ancestor 'bibliografie' %}"><a href="{% url 'bibliografie' %}"
+                                                             title="Bibliografie">Bibliografie</a></li>
+                <li class="{% ancestor 'nachlass' %}"><a href="{% url 'nachlass' %}"
+                                                         title="Nachlass">Nachlass</a>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+</div>

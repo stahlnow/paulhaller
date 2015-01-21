@@ -1,0 +1,15 @@
+{% load i18n %}
+{% load static %}
+{% load lineage %}
+<nav class="poem-nav">
+    <ul class="inline-list">
+        {% for poem in poems %}
+        <li class="{% ancestor 'poem_detail' poem.slug %}">
+            <a href="{% url 'poem_detail' slug=poem.slug %}"
+               title="{% trans 'permalink' %}">
+                {{ poem.title }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>

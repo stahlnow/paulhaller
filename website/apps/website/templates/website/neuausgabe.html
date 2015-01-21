@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block main %}
+{% include "website/werk_nav.html" %}
+<div class="row">
+    <div class="large-12 columns">
+        <p>
+            Paul Hallers Werk ist für die Schweizer Literatur des 20. Jahrhunderts einzigartig. Das Epos s Juramareili,
+            das
+            Theaterstück Marie und Robert sowie ein Teil seiner Gedichte sind in Aargauer Mundart geschrieben, die bei
+            Paul
+            Haller durch seine poetische Kraft einen Glanz von einmaliger Schönheit erreicht.
+        </p>
+
+        <p>
+            Zu Lebzeiten Paul Hallers sind zwischen 1901 und 1918 dreizehn Gedichte in den Brugger Neujahrsblättern
+            erschienen,
+            in denen er 1916 auch die Erzählung Unter der Treppe veröffentlichte. 1912 ist bei Sauerländer Aarau sein
+            Epos s
+            Juramareili sowie 1916 bei Francke Bern das Theaterstück Marie und Robert verlegt worden. 1922 hat Erwin
+            Haller bei
+            Sauerländer die Gedichte herausgegeben; er ist es auch gewesen, der sich um das Werk seines Bruders zeit
+            seines
+            Lebens verdient gemacht hat und von dem 1931 unter dem Titel Paul Haller, 1882–1920: Ein Lebensbild eine
+            erste
+            Biografie erschienen ist. 1956 erfolgte eine erste Ausgabe der Gesammelten Werke von Paul Haller, die 1964
+            wieder
+            aufgelegt worden ist. 1980 sind seine Werke als Taschenbuch in dritter Auflage und schliesslich 1995 in
+            vierter
+            Auflage – alle bei Sauerländer Aarau – erschienen. Sie sind heute vergriffen.
+        </p>
+
+        <p>
+            Die Neuausgabe So dunkelschwarzi Auge. Neuausgabe der Werke im Baden-Verlag von 2007 bietet gegenüber den
+            vergriffenen Gesammelten Werken unveröffentlichte Texte aus dem Nachlass, erstmals publizierte Fotos sowie
+            Zeichnungen des Dichters Paul Haller. Zudem ist eine Lesung des Juramareili von Hans Rudolf Twerenbold in
+            einer
+            Aufnahme des Jahres 1986 als CD beigefügt. Der Band wird mit einem Vorwort von Hansjörg Schneider Der
+            heimliche Poet
+            Paul Haller eingeleitet und ist in zwei Teile gegliedert: 1. Die Werke in Mundart mit s Juramareili, Marie
+            und
+            Robert und Gedichte und 2. Die Werke in hochdeutscher Sprache mit Die Spinne, Unter der Treppe, Gedichte.
+            Der Band
+            schliesst mit einem detaillierten Inhaltsverzeichnis, einem Verzeichnis der Gedichtanfänge, einer kurzen
+            Bibliografie zum Werk sowie den Quellen- und Bildnachweisen.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="large-3 columns">
+        <img src="{% static 'images/cover.jpg' %}" alt="So dunkelschwarzi Auge"/>
+    </div>
+    <div class="large-6 columns left">
+        <p>
+            <a href="{% static 'files/NZZ.pdf' %}" target="_blank">Rezension NZZ</a><br/>
+            <a href="{% static 'files/NZZ_am_Sonntag.pdf' %}" target="_blank">Rezension NZZ am Sonntag</a><br/>
+            Auszug aus dem Buch&nbsp;<em><a href="{% static 'files/So_dunkelschwarzi_Auge_(Auszug).pdf' %}"
+                                            target="_blank">So dunkelschwarzi Auge</a></em>
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="large-6 columns">
+        <p>
+            Paul Haller<br/><em>So dunkelschwarzi Auge</em><br/>Neuausgabe der Werke<br/>Hrsg.
+            von Christian Haller, Fridolin St&auml;hli, Paul Bieger et
+            al.<br/><span>direkt zu bestellen bei:&nbsp;</span><a
+                href="javascript:contactSauerlaender()">dominik(at)sauerlaender-mangold.ch</a>
+        </p>
+
+
+        <p>
+            CD: Hans Rudolf Twerenbold liest <em>s Juramareili</em>. Abrufbar unter <a
+                href="{% url 'audio' %}">Audio</a>.
+        </p>
+
+        <p>
+            <a href="http://www.baden-verlag.ch/" target="_blank">Baden-Verlag</a>, 2007<br/>
+            ISBN 978-3-85545-146-3
+
+        </p>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

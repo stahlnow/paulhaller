@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block main %}
+{% include "website/werk_nav.html" %}
+
+{% if poems %}
+{% include "website/poem_nav.html" %}
+{% endif %}
+
+<p>Unveröffentlichte Gedichte aus dem Nachlass in zeitlicher Reihenfolge</p>
+
+<p>
+    Quelle: Staatsarchiv Aargau<br />
+    Transkription: Isabelle B&ouml;hmler<br />
+    Redaktion und Auswahl: Fridolin St&auml;hli &amp; Monique Meyer
+</p>
+
+{% endblock %}

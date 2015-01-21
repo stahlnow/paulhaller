@@ -1,0 +1,23 @@
+{% load i18n %}
+{% load endless %}
+{% lazy_paginate posts %}
+
+{% for post in posts %}
+<div class="row full">
+    <div class="large-8 columns">
+
+        <h1>
+            <a href="{% url 'post_detail' slug=post.slug %}" rel="bookmark"
+               title="{% trans 'permalink' %}">{{ post.title }}</a>
+        </h1>
+
+        {{ post.body|safe }}
+
+    </div>
+</div>
+
+
+{% endfor %}
+<!-- @formatter:off -->
+{% show_more "<div class='row left'><div class='button load_more large-4 medium-4 small-4 columns'>show more</div></div>" "<div class='row left'><div class='button load_more large-4 medium-4 small-4 columns'>loading…</div></div>"%}
+<!-- @formatter:on -->

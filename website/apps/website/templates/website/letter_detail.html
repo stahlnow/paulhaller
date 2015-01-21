@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block main %}
+
+{% if letters %}
+{% include "website/letter_nav.html" %}
+{% endif %}
+
+<div class="row">
+    <div class="large-12 columns">
+        <div class="letter">
+            {{letter.body|safe}}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

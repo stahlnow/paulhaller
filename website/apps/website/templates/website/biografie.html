@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load sekizai_tags %}
+{% load i18n %}
+{% block main %}
+
+
+{% include "website/leben_nav.html" %}
+<div class="row">
+    <div class="large-12 columns">
+
+        <p>&bdquo;Paul Haller, 1882&ndash;1920: Ein Lebensbild&ldquo; von
+            Erwin Haller,<br/>Aarau: Sauerl&auml;nder, 1931</p>
+
+
+        <ul class="clearing-thumbs clearing-feature" data-clearing>
+            <li class="clearing-featured-img"><a href="{{ MEDIA_URL }}lebensbild/000.jpg"><img
+                    src="{{ MEDIA_URL }}lebensbild/000.jpg" style="height:150px;"></a></li>
+            <!-- @formatter:off -->
+            {% for i in "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" %}
+            <!-- @formatter:on -->
+            <li>
+                <a href="{{ MEDIA_URL }}lebensbild/{{ forloop.counter|stringformat:'03d' }}.jpg"><img
+                        src="{{ MEDIA_URL }}lebensbild/{{ forloop.counter|stringformat:'03d' }}.jpg"></a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% addtoblock "js" %}
+        <script>
+            // TODO: add lense
+        </script>
+        {% endaddtoblock %}
+
+
+        <p>
+            <a title="pdf"
+               href="{{ MEDIA_URL }}Paul_Haller_1882_1920_Ein_Lebensbild_von_Erwin_Haller.pdf"
+               target="_blank"><b>Download</b></a>
+            184MB
+        </p>
+
+        <p>
+            Aufs&auml;tze zu Leben und Dichtung Paul Hallers von Erwin Haller,<br/>in: Brugger
+            Neujahrsbl&auml;tter
+            1922 und 1923
+        </p>
+
+
+        <ul class="clearing-thumbs clearing-feature" data-clearing>
+            <li class="clearing-featured-img"><a href="{{ MEDIA_URL }}neujahrsblaetter/000.jpg"><img
+                    src="{{ MEDIA_URL }}neujahrsblaetter/000.jpg" style="height:150px;"></a>
+            </li>
+
+            {% for i in "xxxxxxxxxxx" %}
+            <li>
+                <a href="{{ MEDIA_URL }}neujahrsblaetter/{{ forloop.counter|stringformat:'03d' }}.jpg"><img
+                        src="{{ MEDIA_URL }}neujahrsblaetter/{{ forloop.counter|stringformat:'03d' }}.jpg"></a>
+            </li>
+            {% endfor %}
+        </ul>
+
+
+        <p>
+            <a title="pdf"
+               href="{% static 'download/Brugger_Neujahrsblaetter_1922_1923.pdf' %}"
+               target="_blank"><b>Download</b></a>
+            11MB
+        </p>
+    </div>
+</div>
+
+{% endblock %}

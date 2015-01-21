@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load sekizai_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Paul Haller{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'foundation/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'foundation/css/foundation.css' %}">
+    <link rel="stylesheet" href="{% static 'slick.js/slick/slick.css' %}">
+    <!--
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+    <link rel="stylesheet" href="{% static 'css/modxmenu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/subnavi.css' %}">
+-->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% render_block "css" %}
+<script type="text/javascript" src="{% static 'modernizr/modernizr.js' %}"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="off-canvas-wrap" data-offcanvas>
+            <div class="inner-wrap">
+                <div class="row full">
+                    <div class="large-7 large-centered columns">
+                        <div id="header">
+                            <a href="{% url 'home' %}" title="paulhaller.ch"><img style="height:130px;"
+                                src="{% static 'css/images/header2tr.gif' %}"/></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row full">
+                        <div class="large-7 large-centered columns">
+                            {% load lineage %}
+                            <nav>
+                                <ul class="inline-list">
+                                    <li class="category first {% ancestor '/$' %} {% ifancestor '/aktuelles/' %} active {% endifancestor %}">
+                                        <a href="{% url 'aktuelles' %}" title="Aktuelles">Aktuelles</a></li>
+                                        <li class="category {% ancestor '/leben/' %}"><a href="{% url 'zeittafel' %}">Leben</a>
+                                        </li>
+                                        <li class="category {% ancestor '/werk/' %}"><a href="{% url 'neuausgabe' %}">Werk</a>
+                                        </li>
+                                        <li class="category {% ancestor '/briefe/' %}"><a href="{% url 'briefe' %}">Briefe</a>
+                                        </li>
+                                        <li class="category {% ancestor '/predigten/' %}"><a href="{% url 'predigten' %}">Predigten</a>
+                                        </li>
+                                        <li class="category {% ancestor '/rezeption/' %}"><a href="{% url 'rezeption' %}">Rezeption</a>
+                                        </li>
+                                        <li class="category {% ancestor '/audio/' %}"><a href="{% url 'audio' %}">Audio</a>
+                                        </li>
+                                        <li class="category {% ancestor '/links/' %}"><a href="{% url 'links' %}">Links</a>
+                                        </li>
+                                        <li class="category {% ancestor '/impressum/' %}"><a href="{% url 'impressum' %}">Impressum</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div id="content" class="row full">
+                            <div class="large-7 large-centered columns">
+                                {% block main %}{% endblock %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-image">
+                        <img id="bg-image-img" />
+                    </div>
+                    <div id="footer">
+                        <div class="row full">
+                            <div class="large-7 large-centered columns">
+                                <p>Staatsarchiv Aargau © {% now "Y" %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end footer -->
+                </div>
+            </div>
+
+
+            <script type="text/javascript" src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+
+            <script type="text/javascript" src="{% static 'js/jquery.imageLens.js' %}"></script>
+
+            <script type="text/javascript" src="{% static 'foundation/js/foundation.min.js' %}"></script>
+            <script type="text/javascript" src="{% static 'foundation/js/foundation/foundation.clearing.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/endless-pagination.js' %}"></script>
+
+            <script type="text/javascript" src="{% static 'slick.js/slick/slick.min.js' %}"></script>
+
+            <script type="text/javascript" src="{% static 'js/common.js' %}"></script>
+
+
+            <!-- initialize foundation framework, fix footer -->
+            <script type="text/javascript">
+                $(document).foundation();
+
+    // sticky footer
+    $(window).bind("load", function () {
+        var footer = $("#footer");
+        var pos = footer.position();
+        var height = $(window).height();
+        height = height - pos.top;
+        height = height - footer.height();
+        if (height > 0) {
+            footer.css({
+                'margin-top': height + 'px'
+            });
+        }
+    });
+
+    Array.prototype.pickARandomElement = function () {
+        return this[Math.floor(Math.random() * this.length)];
+    }
+
+    var image = "{{ STATIC_URL }}" + "css/images/" + [
+    "bg_brustbild.gif",
+    "haller12.gif",
+    "bg_miterwin.gif",
+    "bg_pfarrhaus.gif",
+    "bg_briefe2.gif",
+    "bg_haller.gif",
+    "bg_predigten.gif",
+    "bg_kirche.gif",
+    "bg_miterwin.gif",
+    "bg_boot.gif",
+    "bg_kirche2.gif",
+    "bg_eltern.gif",
+    "bg_haus.gif"
+    ].pickARandomElement();
+    $("#bg-image-img").attr("src", image);
+
+</script>
+
+<!-- render javascript from other templates -->
+{% render_block "js" %}
+
+</body>
+</html>

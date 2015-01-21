@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block main %}
+ <div class="row full">
+    <div class="large-8 columns">
+
+        <h1>
+            <a href="{% url 'post_detail' slug=post.slug %}" rel="bookmark"
+               title="{% trans 'permalink' %}">{{ post.title }}</a>
+        </h1>
+
+        {{ post.body|safe }}
+
+    </div>
+</div>
+{% endblock %}

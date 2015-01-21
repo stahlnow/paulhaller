@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block main %}
+<div class="row">
+    <div class="large-12 columns">
+        <p>Hermann Burger, „Versuch über den Dichter Paul Haller“ / Werner Sommer, „Zeichnungen zu den Landschaften Paul Hallers“, in: Brugger Neujahrsblätter 1981, S. 125–145.
+        </p>
+    </div>
+</div>
+
+<ul class="clearing-thumbs clearing-feature" data-clearing>
+    <li class="clearing-featured-img">
+        <a href="{{ MEDIA_URL }}rezeption/burger/000.jpg">
+            <img src="{{ MEDIA_URL }}rezeption/burger/000.jpg" style="height:150px;" />
+        </a>
+    </li>
+    <!-- @formatter:off -->
+    {% for i in "xxxxxxxxxx" %}
+    <!-- @formatter:on -->
+    <li>
+    <a href="{{ MEDIA_URL }}rezeption/burger/{{ forloop.counter|stringformat:'03d' }}.jpg">
+            <img src="{{ MEDIA_URL }}rezeption/burger/{{ forloop.counter|stringformat:'03d' }}.jpg">
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+<br />
+
+
+<div class="row">
+    <div class="large-12 columns">
+        <p>„I wil s verwurge, i wil s vergässe“
+Broschüre zu Paul Haller und seinem Stück Marie und Robert.
+Mit Texten und Zeichnungen von Paul Haller und einer Einführung von Hansjörg Schneider. Basler Theater Komödie 1974/75.
+        </p>
+    </div>
+</div>
+
+<ul class="clearing-thumbs clearing-feature" data-clearing>
+    <li class="clearing-featured-img">
+        <a href="{{ MEDIA_URL }}rezeption/marieundrobert/000.jpg">
+            <img src="{{ MEDIA_URL }}rezeption/marieundrobert/000.jpg" style="height:150px;" />
+        </a>
+    </li>
+    <!-- @formatter:off -->
+    {% for i in "xxxxxxx" %}
+    <!-- @formatter:on -->
+    <li>
+    <a href="{{ MEDIA_URL }}rezeption/marieundrobert/{{ forloop.counter|stringformat:'03d' }}.jpg">
+            <img src="{{ MEDIA_URL }}rezeption/marieundrobert/{{ forloop.counter|stringformat:'03d' }}.jpg">
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+<br />
+
+
+
+
+
+
+{% endblock %}

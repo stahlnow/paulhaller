@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block main %}
+<div class="row">
+    <div class="large-12 columns">
+        <p>Im Nachlass Paul Hallers im Staatsarchiv Aargau befinden sich fein säuberlich geordnet gut zweihundert, bisher noch ungesichtete Predigten, die Paul Haller während seiner Zeit als Pfarrer auf dem Kirchberg bei Küttigen in den Jahren 1906 bis 1910 verfasste.</p>
+        <p>Um einen Eindruck dieser handschriftlichen Predigten zu gewinnen, präsentieren wir hier drei davon aus den Jahren 1909 und 1910 in Faksimiles.
+        </p>
+    </div>
+</div>
+
+<span>„Jahrringe“, 1. Januar 1909</span>
+<ul class="clearing-thumbs clearing-feature" data-clearing>
+    <li class="clearing-featured-img">
+        <a href="{{ MEDIA_URL }}predigten/1/000.jpg">
+            <img src="{{ MEDIA_URL }}predigten/1/000.jpg" style="height:150px;" />
+        </a>
+    </li>
+    <!-- @formatter:off -->
+    {% for i in "xx" %}
+    <!-- @formatter:on -->
+    <li>
+    <a href="{{ MEDIA_URL }}predigten/1/{{ forloop.counter|stringformat:'03d' }}.jpg">
+            <img src="{{ MEDIA_URL }}predigten/1/{{ forloop.counter|stringformat:'03d' }}.jpg">
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+<br />
+
+<span>„Weihnachtsfreuden“, 25. Dezember 1909</span>
+<ul class="clearing-thumbs clearing-feature" data-clearing>
+    <li class="clearing-featured-img">
+        <a href="{{ MEDIA_URL }}predigten/2/000.jpg">
+            <img src="{{ MEDIA_URL }}predigten/2/000.jpg" style="height:150px;" />
+        </a>
+    </li>
+    <!-- @formatter:off -->
+    {% for i in "x" %}
+    <!-- @formatter:on -->
+    <li>
+    <a href="{{ MEDIA_URL }}predigten/2/{{ forloop.counter|stringformat:'03d' }}.jpg">
+            <img src="{{ MEDIA_URL }}predigten/2/{{ forloop.counter|stringformat:'03d' }}.jpg">
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+<br />
+
+<span>„Menschlich & Göttlich“, 9. Oktober 1910</span>
+<ul class="clearing-thumbs clearing-feature" data-clearing>
+    <li class="clearing-featured-img">
+        <a href="{{ MEDIA_URL }}predigten/3/000.jpg">
+            <img src="{{ MEDIA_URL }}predigten/3/000.jpg" style="height:150px;" />
+        </a>
+    </li>
+    <!-- @formatter:off -->
+    {% for i in "x" %}
+    <!-- @formatter:on -->
+    <li>
+    <a href="{{ MEDIA_URL }}predigten/3/{{ forloop.counter|stringformat:'03d' }}.jpg">
+            <img src="{{ MEDIA_URL }}predigten/3/{{ forloop.counter|stringformat:'03d' }}.jpg">
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+
+
+
+{% endblock %}
