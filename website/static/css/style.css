@@ -41,6 +41,10 @@ h1>a:hover {
     font-weight: normal;
 }
 
+button {
+    background-color: #54432c;
+}
+
 
 nav {
     font-family: Verdana;
