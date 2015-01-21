@@ -41,8 +41,18 @@ h1>a:hover {
     font-weight: normal;
 }
 
-button {
+button,
+.button,
+button:active,
+.button:active {
+    color: #eee;
     background-color: #54432c;
+}
+
+button:hover,
+.button:hover {
+    color: #fff;
+    background-color: #665135;
 }
 
 
