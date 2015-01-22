@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load sekizai_tags %}
 {% load static %}
 {% block main %}
 
@@ -7,7 +8,7 @@
     <div class="large-12 columns">
         <p>Hans Rudolf Twerenbold liest „s Juramareili“<br/>Herausgegeben von der Pro Argovia 1986. Alle Urheberrechte vorbehalten.</p>
 
-        <ul>
+        <ul class="numbered">
             <li>
                 <audio controls><source src="{{MEDIA_URL}}audio/twerenbold/01-Hans_Rudolf_Twerenbold_-_CD_Track_01.mp3" type="audio/mpeg">
                 </audio>
@@ -68,7 +69,7 @@
             Aufnahme: 20. November 2009, Selmi Tonstudio, Zürich.
         </p>
 
-        <ul>
+        <ul class="numbered">
             <li>
                 <audio controls><source src="{{MEDIA_URL}}audio/hostettler/01-Hostettler_-_CD_Track_01.mp3" type="audio/mpeg">
                 </audio>
@@ -112,6 +113,32 @@
         </ul>
     </div>
 </div>
+
+
+<ul class="clearing-thumbs clearing-feature" data-clearing>
+    <!-- @formatter:off -->
+    {% for i in "xxxxxxxxxxxxxxxxxxxxxx" %}
+    <!-- @formatter:on -->
+    <li class="clearing-featured-img">
+        <a href="{{ MEDIA_URL }}juramareili/{{ forloop.counter|stringformat:'02d' }}.jpg">
+            <img src="{{ MEDIA_URL }}juramareili/{{ forloop.counter|stringformat:'02d' }}.jpg" style="height:150px;">
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+<br />
+
+
+{% addtoblock "js" %}
+<script>
+
+for (var i = 0; i < $('audio').length; ++i) {
+    setTimeout($('audio')[i].pause.bind($('audio')[i]), 10);
+}
+
+</script>
+{% endaddtoblock %}
+
 
 
 {% endblock %}

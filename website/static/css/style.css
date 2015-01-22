@@ -30,8 +30,12 @@ a, a:hover, a:visited {
     color: #54432c;
 }
 
-li {
+ul.numbered li {
     list-style-type: upper-roman;
+}
+
+li {
+    list-style-type: none;
 }
 
 li>a,
