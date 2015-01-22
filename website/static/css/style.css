@@ -74,6 +74,10 @@ nav {
     padding: 0px 5px 0px 5px;
 }
 
+nav.poem-nav li {
+    margin: 0 !important;
+    padding: 0 10px 0 10px;
+}
 nav.poem-nav li a,
 nav.letter-nav li a {
     font-weight: bold;
