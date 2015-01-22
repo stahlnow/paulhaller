@@ -64,6 +64,10 @@ button:hover,
 }
 
 
+audio {
+    background-color: #54432c;
+}
+
 nav {
     font-family: Verdana;
     font-size: 1.2rem;
