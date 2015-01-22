@@ -106,10 +106,11 @@ CKEDITOR_CONFIGS = {
                 'items': ['TextColor', 'BGColor']
             }
         ],
-        'height': 200,
+        'height': 400,
         'width': 1500,
         'skin': 'moono',
         'uiColor': '#FF00FF',
+        'allowedContent': 'true',
     },
 }
 
