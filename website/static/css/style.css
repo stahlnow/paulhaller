@@ -30,8 +30,12 @@ a, a:hover, a:visited {
     color: #54432c;
 }
 
-ul.numbered li {
-    list-style-type: upper-roman;
+ul.playlist {
+    text-decoration: underline;
+}
+
+ul.playlist li.active a {
+    font-weight: bolder;
 }
 
 li {
