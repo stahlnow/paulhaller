@@ -6,7 +6,7 @@
 CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here. For example:
 	// config.language = 'fr';
-	config.uiColor = '#FF00FF';
+	config.uiColor = '#eeeeee';
     config.extraPlugins = 'oembed,widget,leaflet,codesnippet';
 
     config.oembed_maxWidth = '715';
@@ -16,3 +16,5 @@ CKEDITOR.editorConfig = function( config ) {
 
 
 };
+
+CKEDITOR.config.allowedContent = true;

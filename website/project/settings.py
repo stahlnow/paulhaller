@@ -109,10 +109,10 @@ CKEDITOR_CONFIGS = {
         'height': 400,
         'width': 1500,
         'skin': 'moono',
-        'uiColor': '#FF00FF',
-        'allowedContent': 'true',
+        'uiColor': '#eeeeee'
     },
 }
+
 
 # Bower components
 BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'static')
