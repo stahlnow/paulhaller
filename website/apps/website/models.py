@@ -3,7 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
 from django.utils.timezone import now
 
-from website.managers import PublicManager
+# from website.managers import PublicManager
 
 from ckeditor.fields import RichTextField
 
@@ -25,7 +25,7 @@ class Post(models.Model):
     publish = models.DateTimeField(_('publish'), default=now)
     created = models.DateTimeField(_('created'), auto_now_add=True)
     modified = models.DateTimeField(_('modified'), auto_now=True)
-    objects = PublicManager()
+    # objects = PublicManager()
 
     class Meta:
         verbose_name = _('post')
@@ -41,11 +41,11 @@ class Post(models.Model):
     def get_absolute_url(self):
         return 'post_detail', (), {'slug': self.slug}
 
-    def get_previous_post(self):
-        return self.get_previous_by_publish(status__gte=2)
-
-    def get_next_post(self):
-        return self.get_next_by_publish(status__gte=2)
+    # def get_previous_post(self):
+    #     return self.get_previous_by_publish(status__gte=2)
+    #
+    # def get_next_post(self):
+    #     return self.get_next_by_publish(status__gte=2)
 
 
 class Poem(models.Model):
@@ -65,7 +65,7 @@ class Poem(models.Model):
     publish = models.DateTimeField(_('publish'), default=now)
     created = models.DateTimeField(_('created'), auto_now_add=True)
     modified = models.DateTimeField(_('modified'), auto_now=True)
-    objects = PublicManager()
+    # objects = PublicManager()
 
     class Meta:
         verbose_name = _('poem')
@@ -81,11 +81,11 @@ class Poem(models.Model):
     def get_absolute_url(self):
         return 'poem_detail', (), {'slug': self.slug}
 
-    def get_previous_post(self):
-        return self.get_previous_by_publish(status__gte=2)
-
-    def get_next_post(self):
-        return self.get_next_by_publish(status__gte=2)
+    # def get_previous_post(self):
+    #     return self.get_previous_by_publish(status__gte=2)
+    #
+    # def get_next_post(self):
+    #     return self.get_next_by_publish(status__gte=2)
 
 
 class Letter(models.Model):
@@ -105,7 +105,7 @@ class Letter(models.Model):
     publish = models.DateTimeField(_('publish'), default=now)
     created = models.DateTimeField(_('created'), auto_now_add=True)
     modified = models.DateTimeField(_('modified'), auto_now=True)
-    objects = PublicManager()
+    # objects = PublicManager()
 
     class Meta:
         verbose_name = _('letter')
@@ -121,8 +121,8 @@ class Letter(models.Model):
     def get_absolute_url(self):
         return 'letter_detail', (), {'slug': self.slug}
 
-    def get_previous_post(self):
-        return self.get_previous_by_publish(status__gte=2)
-
-    def get_next_post(self):
-        return self.get_next_by_publish(status__gte=2)
+    # def get_previous_post(self):
+    #     return self.get_previous_by_publish(status__gte=2)
+    #
+    # def get_next_post(self):
+    #     return self.get_next_by_publish(status__gte=2)

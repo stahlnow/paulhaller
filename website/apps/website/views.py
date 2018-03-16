@@ -2,12 +2,12 @@ from endless_pagination.views import AjaxListView
 from django.views.generic import ListView, DetailView
 from django.utils import timezone
 
-from website.models import Post, Poem, Letter
+from .models import Post, Poem, Letter
 
 
 class PostListView(AjaxListView):
     model = Post
-    queryset = Post.objects.published()
+    queryset = Post.objects.all()
     context_object_name = "posts"
 
     def get_context_data(self, **kwargs):
