@@ -1,6 +1,6 @@
 Django==1.7.1
 Pillow==2.5.1
-PyYAML==3.11
+PyYAML==5.1
 argh==0.25.0
 django-bower==5.0.1
 django-admin-sortable2==0.3.1
