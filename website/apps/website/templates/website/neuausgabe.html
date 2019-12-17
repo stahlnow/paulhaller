@@ -4,6 +4,36 @@
 {% block main %}
 {% include "website/werk_nav.html" %}
 <div class="row">
+    <div class="large-3 columns">
+        <img src="{% static 'images/cover.jpg' %}" alt="So dunkelschwarzi Auge"/>
+    </div>
+    <div class="large-6 columns left">
+        <p>
+            Paul Haller<br/><em>So dunkelschwarzi Auge</em><br/>Neuausgabe der Werke<br/>Hrsg.
+            von Christian Haller, Fridolin St&auml;hli, Paul Bieger et
+            al.<br/><span>direkt zu bestellen bei:&nbsp;</span><a
+                href="javascript:contactSauerlaender()">dominik(at)sauerlaender-mangold.ch</a>
+        </p>
+
+        <p>
+            <a href="{{MEDIA_URL}}So dunkelschwarzi Auge.mobi" target="_blank">Download E-Book (kindle)</a><br />
+            <a href="{{MEDIA_URL}}So dunkelschwarzi Auge.epub" target="_blank">Download E-Book (epub)</a>
+        </p>
+
+
+        <p>
+            CD: Hans Rudolf Twerenbold liest <em>s Juramareili</em>. Abrufbar unter <a
+                href="{% url 'audio' %}">Audio</a>.
+        </p>
+
+        <p>
+            <a href="http://www.baden-verlag.ch/" target="_blank">Baden-Verlag</a>, 2007, ISBN 978-3-85545-146-3
+
+        </p>
+    </div>
+</div>
+
+<div class="row">
     <div class="large-12 columns">
         <p>
             Paul Hallers Werk ist für die Schweizer Literatur des 20. Jahrhunderts einzigartig. Das Epos s Juramareili,
@@ -48,35 +78,7 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="large-3 columns">
-        <img src="{% static 'images/cover.jpg' %}" alt="So dunkelschwarzi Auge"/>
-    </div>
-    <div class="large-6 columns left">
-        <p>
-            Paul Haller<br/><em>So dunkelschwarzi Auge</em><br/>Neuausgabe der Werke<br/>Hrsg.
-            von Christian Haller, Fridolin St&auml;hli, Paul Bieger et
-            al.<br/><span>direkt zu bestellen bei:&nbsp;</span><a
-                href="javascript:contactSauerlaender()">dominik(at)sauerlaender-mangold.ch</a>
-        </p>
 
-        <p>
-
-            <a href="{{MEDIA_URL}}So dunkelschwarzi Auge.epub" target="_blank">Download E-Book</a>
-        </p>
-
-
-        <p>
-            CD: Hans Rudolf Twerenbold liest <em>s Juramareili</em>. Abrufbar unter <a
-                href="{% url 'audio' %}">Audio</a>.
-        </p>
-
-        <p>
-            <a href="http://www.baden-verlag.ch/" target="_blank">Baden-Verlag</a>, 2007, ISBN 978-3-85545-146-3
-
-        </p>
-    </div>
-</div>
 
 <div class="row">
     <div class="large-6 columns">
