@@ -1,4 +1,4 @@
-Django==1.7.1
+Django==2.2.24
 Pillow==2.5.1
 PyYAML==3.11
 argh==0.25.0
